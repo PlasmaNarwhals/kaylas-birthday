@@ -5,10 +5,13 @@
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/6/6b/Draw_this_birthday_cake_.svg">
         <style>
             @keyframes fade{
-                
+                0% {left:200px; opacity:0.0;}
+                99%{left:1px;}
+                100% {left 0px; opacity: 1.0;}
             }
             .gradient-text {
                 background: linear-gradient(red, blue);
@@ -30,6 +33,9 @@
         <style>
             font-family: 'Caveat', cursive;
         </style>
+        <style>
+            font-family: 'Roboto Slab', serif;
+        </style>
     </head>
     <body>
         <center style="font-family: Caveat;">
@@ -37,9 +43,10 @@
             <div style="font-size: 125px; font-family: Frank Ruhl Libre;">
             <h1 style = "opacity: 1.0;" class="gradient-text2" id="num">0</h1>
             </div>
-            
+            </center>
+            <p style="overflow-x: hidden; animation-name: fade; animation-duration: 3s; text-align: center; position: relative;font-family: Roboto Slab;font-size:40px;">Happy 18th birthday, Kayla! I hope you have a wonderful day even in the middle of this quarantine.</p>
             <video src="test.mp4" controls style="width: 100%;"></video>
-        </center>
+        
     </body>
     <script>
         window.flash = 0;
