@@ -7,6 +7,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/6/6b/Draw_this_birthday_cake_.svg">
         <style>
+            @keyframes fade{
+                
+            }
             .gradient-text {
                 background: linear-gradient(red, blue);
                 -webkit-background-clip: text;
@@ -31,7 +34,10 @@
     <body>
         <center style="font-family: Caveat;">
             <h1 style="font-size: 85px;" class="gradient-text">Happy Birthday!</h1>
-            <h1 style="font-size: 150px; font-family: Frank Ruhl Libre;" class="gradient-text2" id="num">0</h1>
+            <div style="font-size: 125px; font-family: Frank Ruhl Libre;">
+            <h1 style = "opacity: 1.0;" class="gradient-text2" id="num">0</h1>
+            </div>
+            
             <video src="test.mp4" controls style="width: 100%;"></video>
         </center>
     </body>
@@ -39,11 +45,11 @@
         window.flash = 0;
         function doFlash(){
             if (window.flash < 8){
-                if (document.getElementById("num").getAttribute("class") == "invis"){
-                    document.getElementById("num").setAttribute("class", "gradient-text2");
+                if (document.getElementById("num").getAttribute("style") == "opacity: 1.0;"){
+                    document.getElementById("num").setAttribute("style", "opacity: 0.0;");
                 }
                 else{
-                    document.getElementById("num").setAttribute("class", "invis");
+                    document.getElementById("num").setAttribute("style", "opacity: 1.0;");
                 }
                 window.flash += 1;
             }
