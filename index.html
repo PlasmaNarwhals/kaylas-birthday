@@ -28,7 +28,23 @@
     <body>
         <center style="font-family: Caveat;">
             <h1 style="font-size: 85px;" class="gradient-text">Happy Birthday!</h1>
-            <h1 style="font-size: 150px; font-family: Frank Ruhl Libre;" class="gradient-text2">18</h1>
+            <h1 style="font-size: 150px; font-family: Frank Ruhl Libre;" class="gradient-text2" id="num">0</h1>
+            <video src="test.mp4" controls></video>
         </center>
     </body>
+    <script>
+        function countUp(){
+            document.getElementById("num").innerHTML = Number(document.getElementById("num").innerHTML) + 1;
+            if (Number(document.getElementById("num").innerHTML) < 18){
+                setTimeout(countUp, 150);
+            }
+        }
+        countUp();
+        window.onload =  function(){
+            var audio = new Audio(
+        "https://upload.wikimedia.org/wikipedia/commons/f/f9/Beep_example.ogg"
+      );
+      audio.play();
+        }
+    </script>
 </html>
