@@ -13,6 +13,19 @@
                 99%{left:1px;}
                 100% {left 0px; opacity: 1.0;}
             }
+            @keyframes fade2{
+                0% {left:200px; opacity:0.0;}
+                60%{left:0px; opacity: 1.0;}
+                70%{right:1px; opacity: 1.0;}
+                100% {right: 100px; opacity: 0.0;}
+            }
+            @keyframes fade3{
+                0% {right:200px; opacity:0.0;}
+                30%{right:100px; opacity: 1.0;}
+                60%{right:0px; opacity: 1.0;}
+                70%{left:1px; opacity: 1.0;}
+                100% {left: 100px; opacity: 0.0;}
+            }
             .gradient-text {
                 background: linear-gradient(red, blue);
                 -webkit-background-clip: text;
@@ -45,9 +58,9 @@
             </div>
             </center>
         <p style="overflow-x: hidden; animation-name: fade; animation-duration: 3s; text-align: center; position: relative;font-family: Roboto Slab;font-size:40px;">Happy 18th birthday, Kayla! I hope you have a wonderful day even in the middle of this quarantine! You are an amazing person and I look forward to seeing what you do in the future. - Atticus :)</p>
-        <div>
+        <div id="slide_anim" style="overflow-x: hidden; animation: infinite; animation-name: fade2; animation-duration: 5s; position: relative;">
             <center>
-            <img style="height: 500px;" src="1.JPG">
+            <img style="height: 500px;" src="1.JPG" id="slide">
             </center>
         </div>
             <video src="test.mp4" controls style="width: 100%;"></video>
@@ -55,6 +68,7 @@
     </body>
     <script>
         window.flash = 0;
+        window.photo = 1;
         function doFlash(){
             if (window.flash < 8){
                 if (document.getElementById("num").getAttribute("style") == "opacity: 1.0;"){
@@ -75,8 +89,23 @@
                 setInterval(doFlash, 350)
             }
         }
-        
-        
+        function slideshow_count(){
+            if (window.photo < 7){
+                window.photo +=1;
+            }
+            else{
+                window.photo = 1;
+            }
+            document.getElementById("slide").setAttribute("src", String(window.photo) + ".jpg")
+            if (document.getElementById("slide_anim").getAttribute("style") == "overflow-x: hidden; animation: infinite; animation-name: fade2; animation-duration: 5s; position: relative;"){
+                document.getElementById("slide_anim").setAttribute("style", "overflow-x: hidden; animation: infinite; animation-name: fade3; animation-duration: 5s; position: relative;")
+            }
+            else{
+                document.getElementById("slide_anim").setAttribute("style", "overflow-x: hidden; animation: infinite; animation-name: fade2; animation-duration: 5s; position: relative;")
+            }
+            
+        }
+        setInterval(slideshow_count, 5000)
         countUp();
     </script>
 </html>
